@@ -310,7 +310,7 @@ Channel Description: ${(channelInfo as any)?.description}`;
         // query openai
         let wrong = false;
         const response = await openai.chat.completions.create({
-            model: 'gpt-4-turbo-preview',
+            model: 'gpt-4o',
             max_tokens: 4096,
             temperature: 0.4,
             response_format: {
