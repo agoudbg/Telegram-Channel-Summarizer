@@ -1,4 +1,4 @@
 interface:
   display_name: "Telegram Channel Summarizer"
   short_description: "Create sourced digests from Telegram channel posts"
-  default_prompt: "Use $telegram-channel-summarizer to turn these Telegram channel posts into a concise, sourced digest."
+  default_prompt: "Use $telegram-channel-summarizer to turn these Telegram channel posts into compact topic headings with distilled titles linked to the original posts."

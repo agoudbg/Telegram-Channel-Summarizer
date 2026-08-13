@@ -34,6 +34,19 @@ Use $telegram-channel-summarizer to summarize the attached result.json and focus
 
 The skill treats pasted text as the primary, most reliable input. Public `t.me` pages and Telegram Desktop JSON or HTML exports are best-effort alternatives.
 
+## Output
+
+The default output preserves the compact format of the original bot: one topic title followed by several distilled titles that link directly to the source posts.
+
+```markdown
+## Aurora 2.0 arrives with a short outage
+
+- [Friday release includes a five-minute API interruption](https://t.me/example/101)
+- [Internal benchmark claims 31% lower median latency](https://t.me/example/103)
+```
+
+It does not add a channel heading, overview paragraph, coverage section, or separate source labels unless the user requests a different format.
+
 ## Limits
 
 - Text and media captions only; image, audio, and video contents are not analyzed.

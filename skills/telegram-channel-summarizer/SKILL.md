@@ -38,29 +38,25 @@ Create a selective digest from Telegram channel text while preserving coverage, 
 2. Omit routine repetition, promotions without substantive information, and low-information chatter. Do not add filler to reach a target length.
 3. Group related selected posts by topic. Produce at most six groups by default, with one to four posts per group when practical.
 4. Use each source post in at most one group.
-5. Write specific group titles. Keep summaries concise without sacrificing names, quantities, dates, or qualifications that materially affect meaning.
+5. Write a specific, concise title for each group, normally no more than 10 words. For every selected source post, write a distilled title rather than a sentence summary, normally no more than 15 words.
 6. Distinguish reported facts from the channel's own claims, predictions, opinions, jokes, and unresolved contradictions. Attribute claims instead of silently presenting them as verified facts.
 7. Follow the user's requested focus and output format when supplied. Otherwise use the language of the user's request; if it cannot be inferred, use the dominant source language. Preserve proper names in their established form.
 
 ## Format the result
 
-Use this default Markdown shape:
+Reproduce the compact legacy layout. Use one prominent topic title followed immediately by several distilled post titles that link to their originals:
 
 ```markdown
-# <Channel or topic> digest
-
-**Coverage:** <requested scope; actual dates/count/source; important gaps>
-
-<Two to four sentences summarizing the overall signal.>
-
 ## <Topic group>
 
-- <One-sentence post summary> ([source](https://t.me/...))
-- <One-sentence post summary> (Message 7, <date when available>)
+- [<Distilled post title>](https://t.me/...)
+- [<Distilled post title>](https://t.me/...)
 ```
 
+- Output only the topic groups by default. Do not prepend a channel title, `Coverage` block, overview paragraph, table of contents, or explanatory introduction. Do not append a conclusion.
 - Include only groups that contain selected posts and never exceed six groups unless the user explicitly requests a different limit.
-- Link directly to the source post when an exact URL is available. Otherwise cite the stable message label and date; never construct a guessed link.
-- State actual web coverage rather than implying that a partial public page represents the channel's complete history.
-- Mention limitations only when they affect interpretation of the digest.
+- Make the distilled post title itself the Markdown link. Do not write a sentence followed by a separate `source` link.
+- When no exact source URL exists, use a plain short-title bullet followed by the stable message label and date. Never construct a guessed link.
+- Preserve names, quantities, dates, and qualifications that materially affect meaning inside the short titles.
+- If partial retrieval or skipped content materially limits the result, append one brief italicized note after all groups. Do not add a separate coverage section.
 - If the supplied material contains no posts worth summarizing or too little text to support a digest, say so plainly and identify what additional input is needed.
